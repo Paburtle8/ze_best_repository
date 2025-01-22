@@ -1,0 +1,1 @@
+alert("I have installed a virus on your computer!")

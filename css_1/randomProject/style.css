@@ -1,0 +1,84 @@
+.button{
+    background-color: gray;
+    border-color: black;
+    width:300px;
+    padding: 15px;
+    border-radius: 60px;
+    margin-left: 490px;
+    display: inline-block;
+    cursor:pointer;
+}
+
+.button2{
+    background-color: gray;
+    border-color: black;
+    width:300px;
+    padding: 15px;
+    border-radius: 60px;
+    margin-left: 290px;
+    margin-top: 400px;
+    display: inline-block;
+    cursor:pointer;
+}
+
+.buttonRed{
+    background-color: rgb(77, 40, 40);
+    border-color: black;
+    width:300px;
+    padding: 15px;
+    border-radius: 60px;
+    margin-left: 290px;
+    margin-top: 400px;
+    display: inline-block;
+    cursor:pointer;
+
+}
+
+.buttonRed2{
+    background-color: rgb(77, 40, 40);
+    border-color: black;
+    width:300px;
+    padding: 15px;
+    border-radius: 60px;
+    margin-left: 150px;
+    margin-top: 300px;
+    display: inline-block;
+    cursor:pointer;
+
+}
+
+.buttonRed3{
+    background-color: rgb(77, 40, 40);
+    border-color: black;
+    width:300px;
+    padding: 15px;
+    border-radius: 60px;
+    margin-left: 200px;
+    margin-top: 500px;
+    display: inline-block;
+    cursor:pointer;
+
+}
+
+#turnback{
+    background-color: rgb(62, 23, 23);
+}
+
+#littleWarning{
+    background-color: rgb(182, 134, 134);
+}
+
+#moreWarning{
+    background-color:rgb(139, 49, 49);
+}
+
+p{
+    color:cornsilk;
+    font-size: larger;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
