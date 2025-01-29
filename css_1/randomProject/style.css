@@ -1,4 +1,4 @@
-.button{
+#button{
     background-color: gray;
     border-color: black;
     width:300px;
@@ -21,7 +21,7 @@
     cursor:pointer;
 }
 
-.buttonRed{
+#buttonRed{
     background-color: rgb(77, 40, 40);
     border-color: black;
     width:300px;
@@ -34,7 +34,7 @@
 
 }
 
-.buttonRed2{
+#buttonRed2{
     background-color: rgb(77, 40, 40);
     border-color: black;
     width:300px;
@@ -47,7 +47,7 @@
 
 }
 
-.buttonRed3{
+#buttonRed3{
     background-color: rgb(77, 40, 40);
     border-color: black;
     width:300px;
@@ -133,5 +133,27 @@ h3{
     border-style:dotted;
 }
 
+nav{
+    position:absolute;
+    left:1230px;
+    font-size:xx-large;
+}
 
+#navText{
+    color:white;
+    text-decoration: underline;
+}
+
+#navTextBlack{
+    color:black;
+    text-decoration: underline;
+}
+
+#copyright{
+    color:aliceblue;
+    left:590px;
+    top:750px;
+    position:absolute;
+    font-size:15px;
+}
 
