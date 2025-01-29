@@ -149,6 +149,9 @@ nav{
     text-decoration: underline;
 }
 
+body{
+    height:500px;
+}
 #copyright{
     color:aliceblue;
     left:590px;
@@ -156,4 +159,3 @@ nav{
     position:absolute;
     font-size:15px;
 }
-
