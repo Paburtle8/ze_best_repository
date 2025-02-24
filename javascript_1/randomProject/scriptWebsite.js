@@ -8,16 +8,42 @@ if (age <= 18 || name.toLowerCase() !== "jinu") {
     window.location.replace("main.html");
 }
 
+let points = 0;
+let loop = true;
+
 setTimeout(() => {
-    let websiteRating = Number(prompt("What is your rating of this website from 1-5?"));
 
-    let bestPerson = prompt("Who is the best person in the world?");
+    while (loop = true){
+        
+        let websiteRating = Number(prompt("What is your rating of this website from 1-5?"));
 
-    if (bestPerson.toLowerCase() === "jinu" && websiteRating === 5){
-        alert("YOU ARE DA BEST PERSON IN THE WORLDDDD!");
-    } else {
-        alert("You are bad :(");
-        window.location.replace("main.html");
+        let bestPerson = prompt("Who is the best person in the world?");
+
+        if (bestPerson.toLowerCase() === "jinu" && websiteRating === 5){
+            points = points += 1;
+
+            alert("YOU ARE DA BEST PERSON IN THE WORLDDDD!");
+            tryAgain = prompt("You have " + points + " points. Do you want to rate again? y or n. ");
+
+            if (tryAgain === "n"){
+                break;
+            } else {
+
+            }
+            
+        } else {
+            points = points -= 1
+
+            alert("You are bad :(");
+            let tryAgain = prompt("You have " + points + " points. Do you want to rate again? y or n. ");
+
+            if (tryAgain === "n"){
+                break;
+            } else {
+
+            }
+
+        }
     }
 
 }, 5000);
