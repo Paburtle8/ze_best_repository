@@ -1,3 +1,8 @@
+
+
+
+
+
 const textBox = document.getElementById("textBox");
 const wpmH1 = document.getElementById("wpmH1");
 const timeDisplay = document.getElementById("timeH1");
@@ -56,3 +61,4 @@ function timer() {
         }
     }, 1000);
 }
+
