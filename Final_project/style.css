@@ -4,18 +4,14 @@ span{
     font-size: 50px;
 }
 
-
-#typingBox {
-    padding: 10px;
-    width: 800px;
-    height: 200px;
-    text-align: center;
-    font-size: 20px;
-    background-color:rgb(161, 153, 153);
-    border-radius: 12%;
-    margin:auto;
-    margin-top: 240px;
+#prompt {
+    margin-top: 100px;
+    font-size: 30px;
+    font-family: "Jersey 10", sans-serif; 
 }
+
+
+
 
 #textBoxPixel{
     position:absolute;
@@ -62,16 +58,20 @@ input{
 }
 
 #wpmH1{
+    position: absolute;
     font-size: 70px;
-    text-align: center;
     padding:5px;
     font-family: "Jersey 10", sans-serif; 
+    bottom:100px;
+    left:630px;
 }
 
 #timeH1{
+    position:absolute;
     font-size: 70px;
-    text-align: center;
     font-family: "Jersey 10", sans-serif; 
+    left: 620px;
+    bottom: 10px;
 }
 
 #buttonStart{
