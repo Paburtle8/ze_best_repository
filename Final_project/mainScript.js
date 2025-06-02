@@ -27,7 +27,15 @@ document.addEventListener("keydown", function (event) {
 
 
 const myWords = ["the",  
-"of",  
+"jinu",
+"dr jinu bung frederico bundgers the knight",
+"jinu",
+"jinu the fourth",
+"jinu the second",
+"jinu",
+"rohan",
+"rohan",
+"rohan",
 "to",  
 "and",  
 "a",  
@@ -1048,8 +1056,7 @@ buttonStart2.addEventListener("click", timer);
 
 // Update word count as the user types
 textBox.addEventListener("input", () => {
-  let words = textBox.value.trim().split(/\s+/);
-  wordCount = textBox.value.trim() === "" ? 0 : words.length;
+  
 });
 
 
@@ -1088,15 +1095,28 @@ function timer() {
     
     if (i <= 0) {
       
+      let promptWords = prompt.textContent.trim().split(/\s+/);
+      let words = textBox.value.trim().split(/\s+/);
+      wordCount = textBox.value.trim() === "" ? 0 : words.length;
+
+
+      let wrongCount = 0;
+
+      for (i = 0; i < Math.min(words.length, promptWords.length); i++) {
+        if (words[i].toLowerCase() !== promptWords[i].toLowerCase()) {
+          wrongCount++;
+        }
+      }
+
       clearInterval(countdown);
       timeDisplay.innerHTML = "Time's up!";
       
 
-      let typeSpeed = (wordCount / 15) * 60;
+      let typeSpeed = ((wordCount / 15) * 60) - (wrongCount * 0.5);
       wpmH1.innerHTML = "WPM: " + Math.round(typeSpeed);
       
 
-      const earnedCoins = Math.floor(typeSpeed / 10);
+      const earnedCoins = Math.floor((typeSpeed / 10) - wrongCount);
       if (earnedCoins > 0) {
         addCoins(earnedCoins);
       }
@@ -1107,3 +1127,5 @@ function timer() {
     }
   }, 1000);
 }
+
+
