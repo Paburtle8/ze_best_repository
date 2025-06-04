@@ -7,12 +7,30 @@ const buttonStart2 = document.getElementById("buttonStart2");
 const coinImage = document.getElementById("coinImage"); 
 const coinText = document.getElementById("coinAmount");
 const prompt = document.getElementById("prompt");
+const coinClickerText = document.getElementById("coinClickerText");
 
 // Initialize variables
 let wordCount = 0;
 let countdown;
 let coinAmount = 0;
 let output = "";
+
+
+function loadCoins() {
+  const savedCoins = localStorage.getItem("typingCoins")
+  if (savedCoins !== null) {
+    coinAmount = parseInt(savedCoins);
+  } else {
+    coinAmount = 0;
+  }
+  displayCoins();
+}
+
+function saveCoins() {
+  localStorage.setItem ("typingCoins", coinAmount.toString());
+}
+
+loadCoins();
 
 // Start the timer when Enter is pressed
 document.addEventListener("keydown", function (event) {
@@ -21,7 +39,6 @@ document.addEventListener("keydown", function (event) {
     timer();
   }
 });
-
 
 
 
@@ -1043,6 +1060,7 @@ const myWords = ["the",
 function addCoins(n) {
   coinAmount += n;
   displayCoins();
+  saveCoins();
 }
 
 // Display coins function
@@ -1053,11 +1071,11 @@ function displayCoins() {
 // Button click handlers
 buttonStart.addEventListener("click", timer);
 buttonStart2.addEventListener("click", timer);
+coinClickerText.addEventListener("click", coinClickAdd);
 
-// Update word count as the user types
-textBox.addEventListener("input", () => {
-  
-});
+function coinClickAdd() {
+  alert("HI");
+}
 
 
 function timer() {
@@ -1112,11 +1130,11 @@ function timer() {
       timeDisplay.innerHTML = "Time's up!";
       
 
-      let typeSpeed = ((wordCount / 15) * 60) - (wrongCount * 0.5);
+      let typeSpeed = ((wordCount / 15) * 60) - (wrongCount * 2);
       wpmH1.innerHTML = "WPM: " + Math.round(typeSpeed);
       
 
-      const earnedCoins = Math.floor((typeSpeed / 10) - wrongCount);
+      const earnedCoins = Math.floor((typeSpeed / 5) - wrongCount);
       if (earnedCoins > 0) {
         addCoins(earnedCoins);
       }
@@ -1126,6 +1144,7 @@ function timer() {
    
     }
   }, 1000);
-}
 
+
+}
 
