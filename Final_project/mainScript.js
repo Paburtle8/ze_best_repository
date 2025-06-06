@@ -1,4 +1,4 @@
-// Get DOM elements correctly matching the HTML
+
 const textBox = document.getElementById("textBox");
 const wpmH1 = document.getElementById("wpmH1");
 const timeDisplay = document.getElementById("timeH1");
@@ -8,13 +8,21 @@ const coinImage = document.getElementById("coinImage");
 const coinText = document.getElementById("coinAmount");
 const prompt = document.getElementById("prompt");
 const coinClickerText = document.getElementById("coinClickerText");
+const priceClickerText = document.getElementById("priceClickerText");
 
-// Initialize variables
+
 let wordCount = 0;
 let countdown;
 let coinAmount = 0;
 let output = "";
+let multiplier = 1;
+let priceMultiplierClicker = 100;
 
+
+
+
+
+//THIS IS FOR THE COINS SAVING LOCALLY
 
 function loadCoins() {
   const savedCoins = localStorage.getItem("typingCoins")
@@ -32,7 +40,47 @@ function saveCoins() {
 
 loadCoins();
 
-// Start the timer when Enter is pressed
+
+
+
+//THIS IS FOR THE MULTIPLIER VARIABLE SAVING LOCALLY
+
+function loadMultiplier() {
+  const savedMultiplier = localStorage.getItem("coinMultiplier")
+  if (savedMultiplier !== null) {
+    multiplier = parseInt(savedMultiplier);
+  } else {
+    multiplier = 1;
+  }
+}
+
+function saveMultiplier() {
+  localStorage.setItem ("coinMultiplier", multiplier.toString());
+}
+
+loadMultiplier();
+
+//THIS IS FOR THE PRICE MULTIPLIER CLICKER VARIABLE SAVING LOCALLY
+
+function loadPriceMultiplierClicker() {
+  const savedPriceMultiplier = localStorage.getItem("coinPriceMultiplyerClicker")
+  if (savedPriceMultiplier !== null) {
+    priceMultiplierClicker = parseInt(savedPriceMultiplier);
+  } else {
+    priceMultiplierClicker = 100;
+  }
+}
+
+function savePriceMultiplierClicker() {
+  localStorage.setItem ("coinPriceMultiplyerClicker", priceMultiplierClicker.toString());
+}
+
+loadPriceMultiplierClicker();
+
+
+
+
+
 document.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
@@ -1063,19 +1111,41 @@ function addCoins(n) {
   saveCoins();
 }
 
-// Display coins function
 function displayCoins() {
   coinText.textContent = "Coins: " + coinAmount; 
 }
 
-// Button click handlers
-buttonStart.addEventListener("click", timer);
-buttonStart2.addEventListener("click", timer);
-coinClickerText.addEventListener("click", coinClickAdd);
+buttonStart?.addEventListener("click", timer);
+buttonStart2?.addEventListener("click", timer);
 
-function coinClickAdd() {
-  alert("HI");
+coinImage.addEventListener("click", coinClick);
+
+coinClickerText?.addEventListener("click", function() {
+  if (coinAmount >= priceMultiplierClicker){
+    
+    coinAmount = coinAmount - priceMultiplierClicker;
+    priceMultiplierClicker = priceMultiplierClicker * 4;
+    multiplier = multiplier * 2;
+    savePriceMultiplierClicker();
+    saveMultiplier();
+    saveCoins();
+    displayCoins();
+  } else {
+    alert("You don't have enough coins to buy this!");
+  }
+  
+});
+updatePriceClicker();
+
+function updatePriceClicker() {
+  priceClickerText.textContent = `Price: ${priceMultiplierClicker}`;
 }
+
+
+function coinClick() {
+  addCoins(multiplier);
+}
+
 
 
 function timer() {
@@ -1134,7 +1204,7 @@ function timer() {
       wpmH1.innerHTML = "WPM: " + Math.round(typeSpeed);
       
 
-      const earnedCoins = Math.floor((typeSpeed / 5) - wrongCount);
+      const earnedCoins = Math.floor((typeSpeed / 3) - wrongCount);
       if (earnedCoins > 0) {
         addCoins(earnedCoins);
       }

@@ -10,6 +10,15 @@ span{
     font-family: "Jersey 10", sans-serif; 
 }
 
+#priceClickerText {
+    position: absolute;
+    font-size: 70px;
+    padding:5px;
+    font-family: "Jersey 10", sans-serif; 
+    top:300px;
+    left: 1200px;
+}
+
 #home {
     position: absolute;
     bottom:630px;
@@ -18,26 +27,19 @@ span{
 
 #coinClickerText {
     position: absolute;
-    font-size: 20px;
+    font-size: 30px;
     padding:5px;
     font-family: "Jersey 10", sans-serif; 
-    bottom:500px;
-    left:400px;
+    top:300px;
     background-color:bisque;
-    padding: 30px;
-    border: 3px solid black;
 }
 
 #coinUpgraderText {
     position: absolute;
-    font-size: 20px;
-    padding:5px;
+    font-size: 30px;
     font-family: "Jersey 10", sans-serif; 
-    bottom:300px;
-    left:300px;
     background-color:bisque;
-    padding: 30px;
-    border: 3px solid black;
+    top:600px;
 }
 
 #textBoxPixel{
