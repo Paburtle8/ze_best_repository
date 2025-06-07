@@ -11,6 +11,16 @@ const coinClickerText = document.getElementById("coinClickerText");
 const priceClickerText = document.getElementById("priceClickerText");
 const coinUpgraderText = document.getElementById("coinUpgraderText");
 const priceUpgraderText = document.getElementById("priceUpgraderText");
+const shop = document.getElementById("shop");
+const home = document.getElementById("home");
+
+
+const bossa = new Audio("bossa.mp3"); 
+const click1 = new Audio("click.mp3"); 
+const coin = new Audio("coin.mp3");
+const coffeeCats = new Audio("coffee cats.mp3");
+const click2 = new Audio("click2.mp3");
+const page = new Audio("page.mp3");
 
 
 let wordCount = 0;
@@ -21,6 +31,8 @@ let multiplier = 1;
 let priceMultiplierClicker = 100;
 let multiplierUpgrader = 1;
 let priceMultiplierUpgrader = 80;
+
+
 
 
 
@@ -1144,7 +1156,6 @@ const myWords = ["the",
 
 
 
-
 function addCoins(n) {
   coinAmount += n;
   displayCoins();
@@ -1161,10 +1172,11 @@ buttonStart2?.addEventListener("click", timer);
 coinImage.addEventListener("click", coinClick);
 
 coinClickerText?.addEventListener("click", function() {
+  click1.play();
   if (coinAmount >= priceMultiplierClicker){
     
     coinAmount = coinAmount - priceMultiplierClicker;
-    priceMultiplierClicker = priceMultiplierClicker * 4;
+    priceMultiplierClicker = priceMultiplierClicker * 3;
     multiplier = multiplier * 2;
     savePriceMultiplierClicker();
     saveMultiplier();
@@ -1184,6 +1196,8 @@ function updatePriceClicker() {
 
 
 function coinClick() {
+  coin.play();
+  coin.volume = 0.1;
   addCoins(multiplier);
 }
 
@@ -1191,10 +1205,11 @@ function coinClick() {
 
 
 coinUpgraderText?.addEventListener("click", function() {
+  click1.play();
   if (coinAmount >= priceMultiplierUpgrader){
     
     coinAmount = coinAmount - priceMultiplierUpgrader;
-    priceMultiplierUpgrader = priceMultiplierUpgrader * 4;
+    priceMultiplierUpgrader = priceMultiplierUpgrader * 3;
     multiplierUpgrader = multiplierUpgrader * 2;
     savePriceMultiplierUpgrader();
     saveMultiplierUpgrader();
@@ -1214,24 +1229,27 @@ function updatePriceUpgrader() {
 }
 
 
+
+
 function timer() {
-
+  click1.play();
   textBox.disabled = false;
-
+  textBox.focus();
+  
   output = "";
   prompt.textContent = "";
-
+  
   function getRandomWord(words) {
     const randomIndex = Math.floor(Math.random() * words.length);
     return words[randomIndex];
   }
-
+  
   for (let i = 0; i < 80; i++) {
     const randomWord = getRandomWord(myWords);
     prompt.textContent = output += randomWord + " ";
+    
+  }
   
-}
-
   textBox.value = ""
   wordCount = 0; 
   wpmH1.innerHTML = "WPM: 0";
@@ -1270,7 +1288,7 @@ function timer() {
       wpmH1.innerHTML = "WPM: " + Math.round(typeSpeed);
       
 
-      const earnedCoins = Math.floor((typeSpeed / 3) - wrongCount);
+      const earnedCoins = Math.floor((typeSpeed / 2) - wrongCount);
       if (earnedCoins > 0) {
         addCoins(earnedCoins * multiplierUpgrader);
       }

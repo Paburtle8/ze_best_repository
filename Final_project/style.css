@@ -16,7 +16,7 @@ span{
     padding:5px;
     font-family: "Jersey 10", sans-serif; 
     top:300px;
-    left: 1200px;
+    left: 1000px;
 }
 
 #priceUpgraderText {
@@ -25,12 +25,22 @@ span{
     padding:5px;
     font-family: "Jersey 10", sans-serif; 
     top:600px;
-    left: 1200px;
+    left: 1000px;
+}
+
+#shopTitle {
+    position: absolute;
+    font-size: 70px;
+    padding:5px;
+    font-family: "Jersey 10", sans-serif; 
+    top:100px;
+    left: 470px;
 }
 
 #home {
     position: absolute;
-    bottom:630px;
+    bottom:640px;
+    left:1300px;
     width: 180px;
 }
 
@@ -40,6 +50,7 @@ span{
     padding:5px;
     font-family: "Jersey 10", sans-serif; 
     top:300px;
+    left:180px;
     background-color:bisque;
 }
 
@@ -48,7 +59,13 @@ span{
     font-size: 30px;
     font-family: "Jersey 10", sans-serif; 
     background-color:bisque;
+    left:180px;
     top:600px;
+}
+
+#bannerImage {
+    position:absolute;
+    left:270px;
 }
 
 #textBoxPixel{
@@ -58,6 +75,15 @@ span{
     left:102px;
     top:245px;
     pointer-events: none;
+}
+
+#coinAmount{
+    position:absolute;
+    right:400px;
+    width:100px;
+    top:10px;
+    text-align: center;
+    display:contents;
 }
 
 #coinImage{
@@ -74,6 +100,12 @@ span{
     display:block;
     left:1300px;
     bottom:660px;
+}
+
+#duckDance {
+    position: absolute;
+    top:1000px;
+    right:500px;
 }
 
 #trophy{
