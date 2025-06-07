@@ -19,6 +19,15 @@ span{
     left: 1200px;
 }
 
+#priceUpgraderText {
+    position: absolute;
+    font-size: 70px;
+    padding:5px;
+    font-family: "Jersey 10", sans-serif; 
+    top:600px;
+    left: 1200px;
+}
+
 #home {
     position: absolute;
     bottom:630px;

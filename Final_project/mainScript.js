@@ -9,6 +9,8 @@ const coinText = document.getElementById("coinAmount");
 const prompt = document.getElementById("prompt");
 const coinClickerText = document.getElementById("coinClickerText");
 const priceClickerText = document.getElementById("priceClickerText");
+const coinUpgraderText = document.getElementById("coinUpgraderText");
+const priceUpgraderText = document.getElementById("priceUpgraderText");
 
 
 let wordCount = 0;
@@ -17,6 +19,8 @@ let coinAmount = 0;
 let output = "";
 let multiplier = 1;
 let priceMultiplierClicker = 100;
+let multiplierUpgrader = 1;
+let priceMultiplierUpgrader = 80;
 
 
 
@@ -76,6 +80,42 @@ function savePriceMultiplierClicker() {
 }
 
 loadPriceMultiplierClicker();
+
+
+
+//THIS IS FOR THE MULTIPLIER UPGRADER VARIABLE SAVING LOCALLY
+
+function loadMultiplierUpgrader() {
+  const savedMultiplierUpgrader = localStorage.getItem("coinMultiplierUpgrader")
+  if (savedMultiplierUpgrader !== null) {
+    multiplierUpgrader = parseInt(savedMultiplierUpgrader);
+  } else {
+    multiplierUpgrader = 1;
+  }
+}
+
+function saveMultiplierUpgrader() {
+  localStorage.setItem ("coinMultiplierUpgrader", multiplierUpgrader.toString());
+}
+
+loadMultiplierUpgrader();
+
+//THIS IS FOR THE PRICE MULTIPLIER UPGRADER VARIABLE SAVING LOCALLY
+
+function loadPriceMultiplierUpgrader() {
+  const savedPriceMultiplierUpgrader = localStorage.getItem("coinPriceMultiplyerUpgrader")
+  if (savedPriceMultiplierUpgrader !== null) {
+    priceMultiplierUpgrader = parseInt(savedPriceMultiplierUpgrader);
+  } else {
+    priceMultiplierUpgrader = 80;
+  }
+}
+
+function savePriceMultiplierUpgrader() {
+  localStorage.setItem ("coinPriceMultiplyerUpgrader", priceMultiplierUpgrader.toString());
+}
+
+loadPriceMultiplierUpgrader();
 
 
 
@@ -1130,6 +1170,7 @@ coinClickerText?.addEventListener("click", function() {
     saveMultiplier();
     saveCoins();
     displayCoins();
+    updatePriceClicker();
   } else {
     alert("You don't have enough coins to buy this!");
   }
@@ -1148,12 +1189,37 @@ function coinClick() {
 
 
 
+
+coinUpgraderText?.addEventListener("click", function() {
+  if (coinAmount >= priceMultiplierUpgrader){
+    
+    coinAmount = coinAmount - priceMultiplierUpgrader;
+    priceMultiplierUpgrader = priceMultiplierUpgrader * 4;
+    multiplierUpgrader = multiplierUpgrader * 2;
+    savePriceMultiplierUpgrader();
+    saveMultiplierUpgrader();
+    saveCoins();
+    displayCoins();
+    updatePriceUpgrader();
+  } else {
+    alert("You don't have enough coins to buy this!");
+  }
+  
+});
+updatePriceUpgrader();
+
+
+function updatePriceUpgrader() {
+  priceUpgraderText.textContent = `Price: ${priceMultiplierUpgrader}`;
+}
+
+
 function timer() {
 
   textBox.disabled = false;
 
-  output = ""; // Reset output each time
-  prompt.textContent = ""; // Clear previous words
+  output = "";
+  prompt.textContent = "";
 
   function getRandomWord(words) {
     const randomIndex = Math.floor(Math.random() * words.length);
@@ -1200,13 +1266,13 @@ function timer() {
       timeDisplay.innerHTML = "Time's up!";
       
 
-      let typeSpeed = ((wordCount / 15) * 60) - (wrongCount * 2);
+      let typeSpeed = ((wordCount / 15) * 60) - (wrongCount);
       wpmH1.innerHTML = "WPM: " + Math.round(typeSpeed);
       
 
       const earnedCoins = Math.floor((typeSpeed / 3) - wrongCount);
       if (earnedCoins > 0) {
-        addCoins(earnedCoins);
+        addCoins(earnedCoins * multiplierUpgrader);
       }
 
       textBox.disabled = true;
