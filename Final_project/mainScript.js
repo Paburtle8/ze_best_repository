@@ -1176,7 +1176,7 @@ coinClickerText?.addEventListener("click", function() {
   if (coinAmount >= priceMultiplierClicker){
     
     coinAmount = coinAmount - priceMultiplierClicker;
-    priceMultiplierClicker = priceMultiplierClicker * 3;
+    priceMultiplierClicker = priceMultiplierClicker * 2;
     multiplier = multiplier * 2;
     savePriceMultiplierClicker();
     saveMultiplier();
@@ -1209,8 +1209,8 @@ coinUpgraderText?.addEventListener("click", function() {
   if (coinAmount >= priceMultiplierUpgrader){
     
     coinAmount = coinAmount - priceMultiplierUpgrader;
-    priceMultiplierUpgrader = priceMultiplierUpgrader * 3;
-    multiplierUpgrader = multiplierUpgrader * 2;
+    priceMultiplierUpgrader = priceMultiplierUpgrader * 2;
+    multiplierUpgrader = multiplierUpgrader * 3;
     savePriceMultiplierUpgrader();
     saveMultiplierUpgrader();
     saveCoins();
