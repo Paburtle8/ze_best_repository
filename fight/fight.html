@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FIGHT!</title>
+</head>
+<body>
+    
+    
+    
+    <video id="explosion" src="explosion4.mp4"></video>
+    <div style="cursor:pointer;" id="divNext">
+        CLICK TO BEGIN NEXT ROUND!
+    </div>
+    
+    <img id="neil" src="neil.png" style="cursor: pointer;">
+    <img id="eric" src="eric.png" style="cursor: pointer;">
+    <img id="jinu" src="jinu.png">
+    <img id="satya" src="satya.png" style="cursor: pointer;">
+    <img id="rohan" src="rohan.png" style="cursor: pointer;">
+    
+    
+    
+    <h1 id="jinuHealth">HEALTH: 100</h1>
+    <h1 id="rohanHealth">HEALTH: 100</h1>
+    
+    <h1 id="pointsText">Points: 0</h1>
+    
+    <button id="jBlastersButton" style="cursor:pointer;">Jinu Blasters</button>
+    <h2 id="jBlastersPriceText">Price: 150</h2>
+    <video id="jBlastersVideo" src="jBlastersAnimation.mp4"></video>
+    
+    <button id="jDeaglesButton" style="cursor:pointer;">Jinu Deagles</button>
+    <h2 id="jDeaglesPriceText">Price: 800</h2>
+    <video id="jDeaglesVideo" src="jDeaglesAnimation.mp4"></video>
+    
+    <video autoplay id="rohanRPG" src="rohanRPG-1.mp4"></video>
+
+    <div class="container">
+        <img id="badZone" src="bad zone.png">
+        <img id="target" src="target.png">
+        <img id="movingObject" src="moving target.png">
+    </div>
+    
+    
+
+    <h1 id="hitText1">HIT!</h1>
+    <h1 id="hitText2">HIT!</h1>
+    <h1 id="hitText3">HIT!</h1>
+
+    <div id="customAlert" class="alertBox">
+        <div class="alertContent">
+            <h2 id="alertH2">HEY!</h2>
+            <p id="alertP"></p>
+            <button style="cursor:pointer;" id="buttonOK">sir yes sir!</button>
+        </div>
+    </div>
+
+
+    
+    <!--------------------SCRIPT--------------------------->
+    <script src="app.js"></script>
+    <!--------------------SCRIPT--------------------------->
+    
+</body>
+</html>
