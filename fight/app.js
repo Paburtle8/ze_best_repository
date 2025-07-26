@@ -34,21 +34,17 @@ const hitText1 = document.getElementById("hitText1")
 const hitText2 = document.getElementById("hitText2")
 const hitText3 = document.getElementById("hitText3")
 
+const blankDiv = document.getElementById("blankDiv")
 
+const hitSoundIndicator = new Audio("hit indicator sound.mp3");
+const hitSound = new Audio("hit sound.mp3");
 
+hitSoundIndicator.volume = 0.7;
+hitSound.volume = 0.7;
 
 document.body.style.overflow = 'hidden';
 
-neil.style.display = "none";
-eric.style.display = "none";
-satya.style.display = "none";
 
-divNext.style.display = "none";
-explosion.style.display = "none";
-jDeaglesVideo.style.display = "none";
-jBlastersVideo.style.display = "none";
-
-customAlert.style.display = "none";
 
 movingObject.style.animation = "none"
 
@@ -93,6 +89,8 @@ movingObjectSpeed = ".6s";
 
 
 
+
+
 function healthRegen(healthCap) {
     
     setInterval(() => {
@@ -128,20 +126,28 @@ setInterval(() => {
 
 function hitGame() {
     setInterval(() => {
-        movingObject.style.display = "block";
-        target.style.display = "block";
-        badZone.style.display = "block";
-        container.style.display = "block";
+        
+        hitSoundIndicator.play();
+        
+        setTimeout(() => {
+            hitSound.play();
+            movingObject.style.display = "block";
+            
+            container.style.display = "block";
+            
+            movingObject.style.animation = ("none");
+            movingObject.offsetHeight;
+            movingObject.style.animation = (`slide ${movingObjectSpeed} ease 3`);
+        }, 600);
 
-        movingObject.style.animation = ("none");
-        movingObject.offsetHeight;
-        movingObject.style.animation = (`slide ${movingObjectSpeed} ease 3`);
             
         hitText1.style.display = "none"
         hitText2.style.display = "none"
         hitText3.style.display = "none"
         index = 0;
     }, hitGameInterval);
+
+    
 }
 
 
@@ -244,7 +250,7 @@ jBlastersButton.addEventListener("click", function(){
         alert("ur poor you cant pay that :(");
     }
     
-    updatePtext();
+    updateText();
 });
 
 jDeaglesButton.addEventListener("click", function(){
@@ -310,6 +316,7 @@ function on() {
     rohanRPG.style.display = "block";
     pointsText.style.display = "block";
     divNext.style.display = "none";
+    blankDiv.style.display = "none";
     explosion.style.display = "none";
 }
 
@@ -333,9 +340,15 @@ function off() {
     jinuHealthText.style.display = "none";
     rohanHealthText.style.display = "none";
     pointsText.style.display = "none";
+    hitText1.style.display = "none";
+    hitText2.style.display = "none";
+    hitText3.style.display = "none";
+    movingObject.style.display = "none";
+    container.style.display = "none";
     jBlastersVideo.style.display = "none";
     jDeaglesVideo.style.display = "none";
     rohanRPG.style.display = "none";
+    blankDiv.style.display = "block";
     explosion.style.display = "block";
     explosion.play();
     setTimeout(function() {
@@ -394,12 +407,16 @@ divNext.addEventListener("click", function(){
         healthRegen(500);
 
         regenInterval = 70;
+        
+        
 
         hitGame();
 
         deathCheck();
 
     } else if (level == 3) {
+
+        
         canShowDiv = true;
 
         eric.style.display = "block";
@@ -413,9 +430,6 @@ divNext.addEventListener("click", function(){
 
         regenInterval = 50;
 
-        hitGame();
-        movingObjectSpeed = ".5s";
-        hitGameInterval = 8000;
 
         deathCheck();
     } else if (level == 4){
@@ -425,17 +439,14 @@ divNext.addEventListener("click", function(){
         neil.style.display = "block";
         satya.style.display = "block";
 
-        rohanHealth = 10000;
-        rohanDamage = 40;
+        rohanHealth = 4000;
+        rohanDamage = 35;
         rohanInterval = 2800;
         updateText();
         healthRegen(4000);
 
-        regenInterval = 37;
+        regenInterval = 45;
 
-        hitGame();
-        movingObjectSpeed = ".4s";
-        hitGameInterval = 5000;
         
         deathCheck();
     }
@@ -467,9 +478,11 @@ document.addEventListener("keydown", function(event) {
     const movingRect = movingObject.getBoundingClientRect();
     const targetRect = target.getBoundingClientRect();
 
-    if (event.code === "Space") {
+    if (event.code === "KeyQ") {
+        
         if (movingRect.left < targetRect.right && 
             movingRect.right > targetRect.left) {
+                
                 index += 1;
                 if (index == 1) {
                     hitText1.style.display = "block";
@@ -482,31 +495,30 @@ document.addEventListener("keydown", function(event) {
                     hitText3.style.animation = ("slideHit3 .3s ease 1;");
                 }
 
-                
             } else {
                 jinuHealth -= 10;
                 updateText();
             }
         }
     });
-    
-    document.addEventListener("keydown", function(event) {
+
+movingObject.addEventListener("animationend", function() {
+    if (index == 0) {
+        jinuHealth -= 30;
+        updateText();
         
-        if (event.code === "KeyQ") {
-            
-            
-            
-            movingObject.style.animation = ("none");
-            movingObject.offsetHeight;
-            movingObject.style.animation = (`slide ${movingObjectSpeed} ease 3`);
-            
-            hitText1.style.display = "none"
-            hitText2.style.display = "none"
-            hitText3.style.display = "none"
-            index = 0;
+    } else if (index == 1) {
+        jinuHealth -= 20;
+        updateText();
+        
+    } else if (index == 2) {
+        jinuHealth -= 10;
+        updateText();
         
     }
 });
+    
+    
 
 
 

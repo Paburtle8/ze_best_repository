@@ -131,11 +131,11 @@ body {
 
 #jDeaglesVideo {
     position: absolute;
-    width: 30vw;
-    height:30vh;
-    top: 2vh;
-    left: 68vw;
-    transform: rotate(-90deg);
+    width: 22vw;
+    height:22vh;
+    top: 30vh;
+    left: 80vw;
+    transform: rotate(-30deg);
     display:none;
 }
 
@@ -187,10 +187,10 @@ body {
 }
 
 .container {
-    position:relative;
+    position:absolute;
     margin-top: 10%;
     margin-left: 60%;
-    
+    display:none;
 }
 
 .container #badZone {
@@ -207,7 +207,7 @@ body {
     top:.1vh;
     left:58vw;
     width:1vw;
-    
+    display:none;
 }
 
 #hitText1 {
@@ -229,6 +229,15 @@ body {
    top:45vh;
    left:1vw; 
    display: none;
+}
+
+#blankDiv {
+    position:absolute;
+    background-color: rgb(255, 255, 255);
+    width:100000000px;
+    height:100000000px;
+    font-size: 70px;
+    display:none;
 }
 
 @keyframes slide {
