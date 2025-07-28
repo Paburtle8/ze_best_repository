@@ -210,6 +210,30 @@ body {
     display:none;
 }
 
+.container2 {
+    position:absolute;
+    margin-top: 15%;
+    margin-left: 60%;
+    display:none;
+}
+
+.container2 #badZone2 {
+    width:60%;
+}
+
+.container2 #target2 {
+    position: absolute;
+    width:12.22%;
+}
+
+#movingObject2 {
+    position: absolute;
+    top:.1vh;
+    left:58vw;
+    width:1vw;
+    display:none;
+}
+
 #hitText1 {
    position: absolute;
    top:25vh;
