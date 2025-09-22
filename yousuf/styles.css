@@ -1,0 +1,84 @@
+#yousuf {
+    position:absolute;
+    width:20vw;
+    left: 40vw;
+    top:40vh;
+}
+
+#heaven {
+    position:absolute;
+    width:70vw;
+    left: 15vw;
+}
+#crown {
+    position:absolute;
+    width:20vw;
+    left: 37vw;
+    top:20vh;
+}
+
+#heavenly_glow {
+    width:99vw;
+    height: 100vh;
+}
+
+#pillar {
+    position:absolute;
+    width:40vw;
+    
+}
+
+#titleYousuf {
+    position:absolute;
+    font-family: Saira;
+    font-size:20ch;
+    bottom:65vh;
+    left:20vw;
+    background-color: rgb(233, 224, 196);
+    outline: black solid 5px;
+    padding:10px;
+    overflow:hidden;
+    white-space: nowrap;
+    animation: 
+        titleYousuf .5s steps(8, end);
+    color:black;
+    
+}
+
+#background{
+    position:absolute;
+    width:50vw;
+    height:50vh;
+    background-color:rgb(255, 197, 111);
+    outline: solid 5px black;
+    left:25vw;
+    bottom:0vh;
+    font-size:5ch;
+    
+}
+
+#yousufH2 {
+    font-family: Saira;
+    position:absolute;
+    top:2vh;
+    left:15vw;
+    font-size:3ch;
+    width:30vw;
+}
+
+@keyframes background {
+    from {
+        transform: translateY(60vh)
+    } to {
+        transform:translateY(0vh)
+    }
+}
+
+ul {
+    text-align: center;
+}
+
+@keyframes titleYousuf {
+    from {width: 0}
+    to {width: 70%}
+}
