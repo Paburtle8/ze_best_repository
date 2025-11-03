@@ -234,6 +234,252 @@ body {
     display:none;
 }
 
+.container3 {
+    position:absolute;
+    margin-top: 4%;
+    margin-left: 60%;
+    display:none;
+}
+
+.container3 #badZone31 {
+    width:10vw;
+}
+.container3 #badZone32 {
+    position:absolute;
+    width:8.2vw;
+    left:15.5vw;
+}
+
+.container3 #target31 {
+    position: absolute;
+    width:5.51vw;
+    left:9.99vw;
+    top:.03vh;
+}
+.container3 #target32 {
+    position: absolute;
+    width:5.2vw;
+    left:23.7vw;
+}
+
+#movingObject3 {
+    position: absolute;
+    top:.1vh;
+    left:58vw;
+    width:1vw;
+    display:none;
+}
+
+.container4left {
+    position:absolute;
+    top:15vh;
+    display:none;
+}
+
+
+.container4left #badZone4left {
+    position:absolute;
+    width:22.2vw;
+    left:15.5vw;
+}
+
+.container4left #target4 {
+    position: absolute;
+    width:5.89vw;
+    left:37vw;
+    top:0vh;
+}
+
+
+#movingObject4left {
+    position: absolute;
+    top:.1vh;
+    left:58vw;
+    width:1vw;
+    display:none;
+}
+.container4right {
+    position:absolute;
+    top:15.6vh;
+    left:50vw;
+    display:none;
+}
+
+
+.container4right #badZone4right {
+    position:absolute;
+    width:22.2vw;
+    left:15.5vw;
+}
+
+.container4right #target4 {
+    position: absolute;
+    width:5.76vw;
+    left:10vw;
+    top:0vh;
+}
+
+
+#movingObject4right {
+    position: absolute;
+    top:.1vh;
+    left:58vw;
+    width:1vw;
+    display:none;
+}
+
+
+
+
+.container5left {
+    position:absolute;
+    top:25vh;
+    display:none;
+}
+
+
+.container5left #badZone5left {
+    position:absolute;
+    width:22.2vw;
+    left:15.5vw;
+}
+
+.container5left #target5 {
+    position: absolute;
+    width:5.89vw;
+    left:37vw;
+    top:0vh;
+}
+
+
+#movingObject5left {
+    position: absolute;
+    top:.1vh;
+    left:58vw;
+    width:1vw;
+    display:none;
+}
+.container5right {
+    position:absolute;
+    top:25.6vh;
+    left:50vw;
+    display:none;
+}
+
+
+.container5right #badZone5right {
+    position:absolute;
+    width:22.2vw;
+    left:15.5vw;
+}
+
+.container5right #target5 {
+    position: absolute;
+    width:5.76vw;
+    left:10vw;
+    top:0vh;
+}
+
+
+#movingObject5right {
+    position: absolute;
+    top:.1vh;
+    left:58vw;
+    width:1vw;
+    display:none;
+}
+
+
+
+
+.container6left {
+    position:absolute;
+    top:35vh;
+    display:none;
+}
+
+
+.container6left #badZone6left {
+    position:absolute;
+    width:22.2vw;
+    left:15.5vw;
+}
+
+.container6left #target6 {
+    position: absolute;
+    width:5.89vw;
+    left:37vw;
+    top:0vh;
+}
+
+
+#movingObject6left {
+    position: absolute;
+    top:.1vh;
+    left:58vw;
+    width:1vw;
+    display:none;
+}
+.container6right {
+    position:absolute;
+    top:35.6vh;
+    left:50vw;
+    display:none;
+}
+
+
+.container6right #badZone6right {
+    position:absolute;
+    width:22.2vw;
+    left:15.5vw;
+}
+
+.container6right #target6 {
+    position: absolute;
+    width:5.76vw;
+    left:10vw;
+    top:0vh;
+}
+
+
+#movingObject6right {
+    position: absolute;
+    top:.1vh;
+    left:58vw;
+    width:1vw;
+    display:none;
+}
+
+
+
+.container7 {
+    position:absolute;
+    top:30vh;
+    left:34vw;
+    display:none;
+}
+
+.container7 #badZone7 {
+    width:34.5vw;
+}
+
+.container7 #target7 {
+    position: absolute;
+    width:8vw;
+    left:34vw;
+
+}
+
+#movingObject7 {
+    position: absolute;
+    top:.1vh;
+    left:0vw;
+    width:1.5vw;
+    display:none;
+}
+
+
+
 #hitText1 {
    position: absolute;
    top:25vh;
@@ -269,6 +515,42 @@ body {
         left: 0vw;
     } to {
         left: 28vw;
+    }
+}
+
+@keyframes slide7 {
+    from {
+        left: 0vw;
+    } to {
+        left: 34vw;
+    }
+}
+
+@keyframes slide4left {
+    from {
+        left: 16vw;
+    } to {
+        left: 42vw;
+    }
+}
+
+@keyframes slideTarget {
+    0% {
+        left: 34vw;
+    } 33% {
+        left: 18vw;
+    } 66% {
+        left:34vw;
+    } 100% {
+        left:18vw;
+    }
+}
+
+@keyframes slide4right {
+    from {
+        left: 37vw;
+    } to {
+        left: 10vw;
     }
 }
 
