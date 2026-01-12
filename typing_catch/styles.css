@@ -1,0 +1,34 @@
+#levelsImg {
+    position:absolute;
+    width:45vw;
+    left:26vw;
+}
+
+/* vocab list */
+
+.vocabDiv {
+    position:absolute;
+    width:45vw;
+    left:26vw;
+}
+
+#vocabImg {
+    position:absolute;
+    width:45vw;
+    
+}
+
+#vocabList_T {
+    position:absolute;
+    top:16vh;
+    left:8vw;
+    font-family: "Pixelify Sans";
+    font-size: 3ch;
+    width:29vw;
+    height:16vh;
+    white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+    
+    
+}
