@@ -1,0 +1,26 @@
+#password {
+    -webkit-text-security: disc; 
+      
+}
+
+.form2 {
+    position:absolute;
+    
+}
+
+.table {
+    position:absolute;
+    left:30vw;
+}
+
+#quack {
+    position:absolute;
+    top:50vh;
+}
+
+#shuba {
+    position:absolute;
+    width: 30vw;
+    left:32vw;
+    top:10vh;
+}

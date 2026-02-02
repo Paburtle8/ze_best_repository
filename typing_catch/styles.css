@@ -1,34 +1,86 @@
+/* body */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+}
+
+
 #levelsImg {
     position:absolute;
     width:45vw;
-    left:26vw;
+    left:6vw;
+    bottom:50vh;
 }
+
 
 /* vocab list */
 
 .vocabDiv {
     position:absolute;
     width:45vw;
-    left:26vw;
+    right: 55vw;
+    top: 56vh;
+}
+
+#boxVocabImg {
+    
+    width:55vw;
+    
 }
 
 #vocabImg {
     position:absolute;
-    width:45vw;
-    
+    width:30vw;
+    left:11.6vw;
+    bottom:34vh;
 }
 
 #vocabList_T {
     position:absolute;
     top:16vh;
-    left:8vw;
+    left:13vw;
     font-family: "Pixelify Sans";
     font-size: 3ch;
     width:29vw;
     height:16vh;
     white-space: normal;
-  overflow-wrap: break-word;
-  word-break: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+    text-align: center;
     
+}
+
+
+/* background */
+
+#background {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* shop */
+
+.shopDiv {
+    position:absolute;
+    top:48vh;
+    left:45vw;
     
+}
+
+#boxShopImg {
+    width:50vw;
+
+
+}
+
+#shopImg {
+    position:absolute;
+    width:40vw;
+    bottom:35vh;
+    left:5vw;
 }
