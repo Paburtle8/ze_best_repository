@@ -84,3 +84,13 @@ body, html {
     bottom:35vh;
     left:5vw;
 }
+
+/* play button */
+
+#playBTN {
+    position:absolute;
+    width:10vw;
+    height:5vh;
+    top:20vh;
+    left:23vw;
+}
