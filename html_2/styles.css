@@ -21,6 +21,13 @@ body {
     }
 }
 
+.form #labelUsername {
+    font-size:x-large;
+}
+.form #labelPassword {
+    font-size:x-large;
+}
+
 #thoughts {
     background-color:antiquewhite;
     box-shadow: 4px 4px 4px 0px black;
