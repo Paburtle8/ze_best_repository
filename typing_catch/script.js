@@ -10,7 +10,7 @@ const vocabList_T = document.getElementById("vocabList_T");
 
 let level = 1;
 
-
+fillType();
 /* functions */
 
 function hide(name, sec) {
@@ -95,6 +95,23 @@ function animateAway() {
     
     
 }
+
+function fillType() {
+    const typingBox = document.getElementById("typingBox");
+    const grayLetters = document.getElementById("grayLetters");
+
+    const typed = typingBox.value.length;
+
+    const fullText = "something";
+
+
+    grayLetters.innerHTML =
+    `<span style="color:black">${fullText.slice(0, typed)}</span>` +
+    `<span style="color:lightgray">${fullText.slice(typed)}</span>`;
+    
+}
+
+
 
 
 playBTN.addEventListener("click", function() {
