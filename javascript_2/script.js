@@ -56,6 +56,7 @@ function changeCortisol(a, b) {
         cortisol[i] = (a + b) + i/ 2 + i;
         cortisolLevel += cortisol[i];
     }
+    return cortisolLevel;
 }
 
 calculateButton.onclick = function() {
