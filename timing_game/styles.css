@@ -1,0 +1,15 @@
+#barWrapper {
+    position: relative;
+}
+
+#target {
+    position: absolute;
+    top: 0;
+    left: 50px; 
+}
+
+#movingBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
